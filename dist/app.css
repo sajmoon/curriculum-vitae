@@ -1,0 +1,12 @@
+body {
+}
+
+.container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul li {
+  margin-top: 5px;
+}

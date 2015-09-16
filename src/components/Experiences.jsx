@@ -28,7 +28,7 @@ export default React.createClass({
     return (
       <div style={style.container}>
         <h2 style={ style.header }>{ type }</h2>
-        {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} />)}
+        {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} />)}
         <hr style={style.divider}/>
       </div>
     )

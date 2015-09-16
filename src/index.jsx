@@ -84,7 +84,7 @@ const experiences = {
     {
       at: 'THS Centralamottagningsgrupp',
       from: '2013',
-      to: '',
+      to: '2013',
       title: 'Event Coordinator',
       subtitle: '',
       remarks: ['Organize events for new students at KTH']
@@ -92,7 +92,7 @@ const experiences = {
     {
       at: 'Valborgsfamiljen',
       from: '2013',
-      to: '',
+      to: '2013',
       title: 'Event Coordinator',
       subtitle: '',
       remarks: ['Organize a pub crawl for around 1000 students in Stockholm']
@@ -100,7 +100,7 @@ const experiences = {
     {
       at: 'Datasektionens Studieresa (Studs)',
       from: '2013',
-      to: '',
+      to: '2013',
       title: 'Salesteam manager',
       subtitle: '',
       remarks: ['Responsible for all sales', 'Managed the team']

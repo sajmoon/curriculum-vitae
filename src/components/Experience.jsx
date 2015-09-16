@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import TimeFrame from './TimeFrame.jsx';
 
 export default Radium(React.createClass({
   propTypes: {
@@ -11,15 +12,8 @@ export default Radium(React.createClass({
     let style = {
       container: {
         display: 'flex',
-        fontFamily: 'Montserrat'
-      },
-      timeframe: {
-        minWidth: "200px",
-        display: "inline",
-        fontStyle: 'italic',
-        fontSize: '14px',
-        textAlign: 'center',
-        fontFamily: 'Poiret One'
+        fontFamily: 'Montserrat',
+        padding: "10px"
       },
       details: {
         fontFamily: 'Roboto Slab'
@@ -38,13 +32,14 @@ export default Radium(React.createClass({
       }
     }
 
+    let oddeven = {backgroundColor: '#F8F8FB'};
+    if (this.props.index % 2 == 0) {
+      oddeven = {}
+    }
+
     let component = (
-      <div style={style.container}>
-        <div style={style.timeframe}>
-          <span>{experience.from}</span>
-          <span>-</span>
-          <span>{experience.to}</span>
-        </div>
+      <div style={[style.container, oddeven ]}>
+        <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>
           <span style={style.company}>{experience.at}</span>
           <span style={style.title}>{experience.title}</span>

@@ -45,7 +45,7 @@ export default Radium(React.createClass({
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>
           <ul>
-            {experience.remarks.map( (remark) => <li>{remark}</li>)}
+            {experience.remarks.map( (remark, i) => <li key={i}>{remark}</li>)}
           </ul>
         </div>
       </div>

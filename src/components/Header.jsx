@@ -48,7 +48,6 @@ export default React.createClass({
     }
 
     let {details, address} = this.props;
-    console.log(details, details.address, details.address.zip);
     return (
       <div style={{display: 'flex'}}>
         <div style={style.header}>
@@ -60,7 +59,7 @@ export default React.createClass({
           <span style={style.address}>{details.address.zip}</span>
         </div>
         <div style={style.header}>
-          {details.resources.map( (resource) => <Resource resource={resource} />)}
+          {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
         </div>
         <img style={style.image} src="http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80" />
       </div>

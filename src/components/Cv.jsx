@@ -4,7 +4,7 @@ import Header from './Header.jsx';
 
 export default React.createClass({
   propTypes: {
-    experiences: React.PropTypes.array.isRequired,
+    experiences: React.PropTypes.object.isRequired,
     details: React.PropTypes.object.isRequired
   },
   render() {

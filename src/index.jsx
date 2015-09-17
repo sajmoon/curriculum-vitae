@@ -161,6 +161,18 @@ const experiences = {
       to: '2013',
       remarks: ['Work fare for students interested in ComputerScience.', 'Helped organize it for 4 years']
     }
+  ],
+  other: [
+    {
+      at: 'Försvarsmakten',
+      from: '2006',
+      to: '2007',
+      title: 'Stridsfordonsplutonbefäl',
+      subtitle: 'Värnplikt',
+      url: 'http://www.forsvarsmakten.se/',
+      remarks: ['Military Service in Sweden', 'Leader of a pluton of around 60 people.']
+
+    }
   ]
 };
 

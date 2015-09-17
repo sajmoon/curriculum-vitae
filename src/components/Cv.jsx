@@ -16,6 +16,7 @@ export default React.createClass({
         <Experiences type="Work" experiences={experiences.work}/>
         <Experiences type="Education" experiences={experiences.education}/>
         <Experiences type="Commissions of Trust" experiences={experiences.commissions}/>
+        <Experiences type="Other" experiences={experiences.other}/>
       </div>
     )
   }

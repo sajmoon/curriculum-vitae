@@ -9,6 +9,10 @@ export default Radium(React.createClass({
   render() {
     let experience = this.props.experience;
 
+    let getRemarks = () => {
+      return experience.remarks || [];
+    }
+
     let style = {
       container: {
         display: 'flex',
@@ -51,7 +55,7 @@ export default Radium(React.createClass({
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>
           <ul>
-            {experience.remarks.map( (remark, i) => <li key={i}>{remark}</li>)}
+            {getRemarks().map( (remark, i) => <li key={i}>{remark}</li>)}
           </ul>
         </div>
       </div>

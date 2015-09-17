@@ -118,13 +118,48 @@ const experiences = {
       remarks: ['Responsible for all sales', 'Managed the team']
     },
     {
-      at: '',
-      from: '',
-      to: '',
+      at: 'Datasektionens Klubbmästeri, DKM',
+      url: 'http://dkm.io/',
+      from: '2009',
+      to: '2013',
+      title: 'Klubbmästare & Barmästare',
+      subtitle: '',
+      remarks: ['Organiza all sorts of activities for students.', 'Lots of fun', 'Leader of a group of 14 people']
+    },
+    {
+      at: 'Dartasektionens Mottagning',
+      url: 'http://datasektionen.se/sektionen/mottagningen/',
+      from: '2010',
+      to: '2011',
       title: '',
       subtitle: '',
-      remarks: ['sdds'],
-      hide: true
+      remarks: ['Reception of new students at KTH', 'Make them feel at home'],
+    },
+    {
+      at: 'Quarnevalen',
+      from: '2014',
+      to: '2014',
+      title: 'Tältchef',
+      subtitle: '',
+      remarks: ['Organzie a huge event for students in Stockholm', 'Parade through town']
+    },
+    {
+      at: 'THS',
+      url: 'http://www.armada.nu/',
+      from: '2010',
+      to: '2011',
+      title: 'Armada',
+      subtitle: 'Företagsvärd',
+      remarks: ['A fare for students to find jobs', 'Helped Skype and Epsilon during the days.', 'Active for 2 years']
+    },
+    {
+      at: 'Datasektionen',
+      title: 'D-Dagen',
+      subtitle: 'Företagsvärd and directorate',
+      url: 'http://datasektionen.se/naringsliv/d-dagen',
+      from: '2009',
+      to: '2013',
+      remarks: ['Work fare for students interested in ComputerScience.', 'Helped organize it for 4 years']
     }
   ]
 };

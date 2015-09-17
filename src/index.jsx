@@ -47,7 +47,7 @@ const experiences = {
       remarks: ['Worked with Java, creating a webapplication for bookings']
     },
     {
-      at: 'StudentConsulting',
+      at: 'Student Consulting',
       from: '2007',
       to: '2008',
       title: 'Reception duty',
@@ -82,19 +82,19 @@ const experiences = {
   ],
   commissions: [
     {
-      at: 'THS Centralamottagningsgrupp',
+      at: 'THS',
       from: '2013',
       to: '2013',
       title: 'Event Coordinator',
-      subtitle: '',
+      subtitle: 'Centralamottagningsgrupp',
       remarks: ['Organize events for new students at KTH']
     },
     {
-      at: 'Valborgsfamiljen',
+      at: 'SSCO',
       from: '2013',
       to: '2013',
       title: 'Event Coordinator',
-      subtitle: '',
+      subtitle: 'Valborgsfamiljen',
       remarks: ['Organize a pub crawl for around 1000 students in Stockholm']
     },
     {

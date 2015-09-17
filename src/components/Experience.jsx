@@ -28,8 +28,14 @@ export default Radium(React.createClass({
         fontFamily: 'Montserrat',
         margin: '3px',
         fontWeight: '700',
-        fontSize: '1.2rem'
-      }
+        fontSize: '1.2rem',
+        textDecoration: 'none',
+        color: 'black',
+        ':hover': {
+          color: 'grey',
+          textDecoration: 'underline',
+        }
+      },
     }
 
     let oddeven = {backgroundColor: '#F8F8FB'};
@@ -41,7 +47,7 @@ export default Radium(React.createClass({
       <div style={[style.container, oddeven ]}>
         <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>
-          <span style={style.company}>{experience.at}</span>
+          <a href={experience.url} style={style.company}>{experience.at}</a>
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>
           <ul>

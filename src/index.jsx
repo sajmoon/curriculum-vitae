@@ -8,6 +8,7 @@ const experiences = {
       from: 'Dec 2014',
       to: 'Sept 2015',
       title: 'Software Developer',
+      url: 'http://www.dewire.com/',
       subtitle: 'Full time',
       at: 'Dewire',
       remarks: [
@@ -20,6 +21,7 @@ const experiences = {
       from: '2013',
       to: '2014',
       title: 'Software Developer',
+      url: 'http://www.elva.se/',
       subtitle: '',
       at: 'Elva',
       remarks: [
@@ -30,8 +32,10 @@ const experiences = {
     },
     {
       at: 'Hi3G (Tre)',
+      url: 'https://tre.se/',
       from: '2012',
       to: '2013',
+      title: 'Software Developer',
       subtitle: '',
       remarks: [
         'Small group of students, planing and executing a project.',
@@ -43,11 +47,13 @@ const experiences = {
       from: '2010',
       to: '2011',
       title: 'Software developer',
+      url: 'http://www.comers.se/',
       subtitle: '',
       remarks: ['Worked with Java, creating a webapplication for bookings']
     },
     {
       at: 'Student Consulting',
+      url: 'https://www.studentconsulting.com/',
       from: '2007',
       to: '2008',
       title: 'Reception duty',
@@ -56,6 +62,7 @@ const experiences = {
     },
     {
       at: 'Procter & Gamble',
+      url: 'http://www.pg.com/',
       from: '2008',
       to: '2010',
       title: 'Several positions',
@@ -66,6 +73,7 @@ const experiences = {
       at: 'Fastighets AB Brostaden',
       from: '2006',
       to: '2007',
+      url: 'http://www.brostaden.se/',
       title: 'Landlord',
       subtitle: 'Summer Internship',
       remarks: ['Summer job working with customers', 'Cleaning, painting etc']
@@ -74,6 +82,7 @@ const experiences = {
   education: [
     {
       at: 'Royal Institute of Technology',
+      url: 'www.kth.se',
       from: '2009',
       title: 'Computer Science',
       subtitle: 'Msc',
@@ -83,6 +92,7 @@ const experiences = {
   commissions: [
     {
       at: 'THS',
+      url: 'http://ths.kth.se/',
       from: '2013',
       to: '2013',
       title: 'Event Coordinator',
@@ -91,6 +101,7 @@ const experiences = {
     },
     {
       at: 'SSCO',
+      url: 'http://www.ssco.se/en',
       from: '2013',
       to: '2013',
       title: 'Event Coordinator',
@@ -99,6 +110,7 @@ const experiences = {
     },
     {
       at: 'Datasektionens Studieresa (Studs)',
+      url: 'http://studieresan.se/',
       from: '2013',
       to: '2013',
       title: 'Salesteam manager',

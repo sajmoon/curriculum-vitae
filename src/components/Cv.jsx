@@ -34,7 +34,7 @@ export default React.createClass({
         <Header details={details} />
         <Experiences type="Work" experiences={work}/>
         <Experiences type="Other" experiences={other}/>
-        <Experiences type="Commission of Trsut" experiences={commisions}/>
+        <Experiences type="Commission of Trust" experiences={commisions}/>
         <Experiences type="Education" experiences={education}/>
       </div>
     )

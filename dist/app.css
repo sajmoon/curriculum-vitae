@@ -7,6 +7,12 @@ body {
   margin-right: auto;
 }
 
+/* Radium has limited vendor prefixing. */
+.flexbox-container {
+  display: flex;
+  display: -webkit-flex;
+}
+
 ul li {
   margin-top: 5px;
 }

@@ -14,6 +14,9 @@ export default React.createClass({
         padding: "40px",
         width: '33%'
       },
+      container: {
+        display: 'flex'
+      },
       image: {
         alignItem: 'center',
         border: "8px solid #eee",
@@ -49,7 +52,7 @@ export default React.createClass({
 
     let {details, address} = this.props;
     return (
-      <div style={{display: 'flex'}}>
+      <div className="flexbox-container" style={style.container}>
         <div style={style.header}>
           <span style={style.name}>{details.name}</span>
           <span style={style.email}>{details.email}</span>

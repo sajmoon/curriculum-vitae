@@ -8,6 +8,7 @@ export default React.createClass({
   },
 
   render() {
+    let block = null;
     let {experiences, type} = this.props;
 
     var style = {
@@ -25,12 +26,19 @@ export default React.createClass({
       }
     }
 
+    // Hide if no elements
+    if (!!experiences && experiences.length > 0) {
+      block = (
+        <div style={style.container}>
+          <h2 style={ style.header }>{ type }</h2>
+          {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} />)}
+          <hr style={style.divider}/>
+        </div>
+      )
+    }
+
     return (
-      <div style={style.container}>
-        <h2 style={ style.header }>{ type }</h2>
-        {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} />)}
-        <hr style={style.divider}/>
-      </div>
+      block
     )
   }
 });

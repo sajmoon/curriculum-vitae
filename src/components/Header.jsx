@@ -61,7 +61,7 @@ export default React.createClass({
         <div style={style.header}>
           {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
         </div>
-        <img style={style.image} src="http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80" />
+        <img style={style.image} src={details.imgurl} />
       </div>
     )
   }

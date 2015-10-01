@@ -199,6 +199,7 @@ const details = {
   name: "Simon Ström",
   email: "simon.strom@gmail.com",
   phone: "+46 (0) 739 59 09 87",
+  imgurl: "http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80",
   address: {
     street: "Kungshamra 35/A",
     zip: "170 70",

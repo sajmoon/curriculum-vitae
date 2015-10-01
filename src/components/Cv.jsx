@@ -32,10 +32,10 @@ export default React.createClass({
     return (
       <div>
         <Header details={details} />
-        <Experiences type="Work" experiences={work}/>
-        <Experiences type="Other" experiences={other}/>
+        <Experiences type="Work Life Experiences" experiences={work}/>
         <Experiences type="Commission of Trust" experiences={commisions}/>
         <Experiences type="Education" experiences={education}/>
+        <Experiences type="Other" experiences={other}/>
       </div>
     )
   }

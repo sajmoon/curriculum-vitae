@@ -1,15 +1,17 @@
-import React from 'react';
-import Experiences from './Experiences.jsx'
+import React, {PropTypes, Component} from 'react';
+import {connect} from 'react-redux';
+import {hideExperience} from '../actions';
+import Experiences from './Experiences.jsx';
 import Header from './Header.jsx';
 import _ from 'lodash';
 
-export default React.createClass({
-  propTypes: {
-    experiences: React.PropTypes.array.isRequired,
-    details: React.PropTypes.object.isRequired
-  },
-  getWorkExperience: function() {
-  },
+class Cv extends Component {
+  handleHideClick(id) {
+    const { dispatch } = this.props;
+
+   dispatch(hideExperience(id));
+  }
+
   render() {
     let {experiences, details} = this.props;
 
@@ -32,12 +34,30 @@ export default React.createClass({
     return (
       <div>
         <Header details={details} />
-        <Experiences type="Work Life Experiences" experiences={work}/>
-        <Experiences type="Commission of Trust" experiences={commisions}/>
-        <Experiences type="Education" experiences={education}/>
-        <Experiences type="Other" experiences={other}/>
+        <Experiences onHideClick={ (e) => this.handleHideClick(e) } type="Work Life Experiences" experiences={work}/>
+        <Experiences onHideClick={ this.handleHideClick } type="Commission of Trust" experiences={commisions}/>
+        <Experiences onHideClick={ this.handleHideClick } type="Education" experiences={education}/>
+        <Experiences onHideClick={ this.handleHideClick } type="Other" experiences={other}/>
       </div>
     )
   }
-});
+}
 
+Cv.propTypes = {
+  experiences: PropTypes.arrayOf(PropTypes.shape({
+    from: PropTypes.string.isRequired
+  })),
+  details: PropTypes.object.isRequired
+}
+
+function select(state) {
+  let filteredExperiences = state.experiences.filter( (exp) => {
+    return exp.status !== 'HIDE';
+  })
+  return {
+    experiences: filteredExperiences,
+    details: state.details
+  }
+}
+
+export default connect(select)(Cv);

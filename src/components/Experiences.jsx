@@ -4,7 +4,8 @@ import Experience from './Experience.jsx';
 export default React.createClass({
   propTypes: {
     experiences: React.PropTypes.array.isRequired,
-    type: React.PropTypes.string.isRequired
+    type: React.PropTypes.string.isRequired,
+    onHideClick: React.PropTypes.func.isRequired
   },
 
   render() {
@@ -31,7 +32,7 @@ export default React.createClass({
       block = (
         <div style={style.container}>
           <h2 style={ style.header }>{ type }</h2>
-          {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} />)}
+          {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} onHideClick={ () => { this.props.onHideClick(experience) } } />)}
           <hr style={style.divider}/>
         </div>
       )

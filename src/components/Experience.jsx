@@ -1,13 +1,15 @@
 import React from 'react';
 import Radium from 'radium';
 import TimeFrame from './TimeFrame.jsx';
+import HideButton from './HideButton.jsx';
+import {hideExperience} from '../actions';
 
 export default Radium(React.createClass({
   propTypes: {
     experience: React.PropTypes.object
   },
   render() {
-    let experience = this.props.experience;
+    const {dispatch, experience} = this.props;
 
     let getRemarks = () => {
       return experience.remarks || [];
@@ -51,6 +53,7 @@ export default Radium(React.createClass({
       <div style={[style.container, oddeven ]}>
         <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>
+          <HideButton onHideClick={this.props.onHideClick} />
           <a href={experience.url} style={style.company}>{experience.at}</a>
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>

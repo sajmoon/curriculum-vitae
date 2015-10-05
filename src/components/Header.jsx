@@ -20,8 +20,8 @@ export default React.createClass({
       image: {
         alignItem: 'center',
         border: "8px solid #eee",
-        width:  '120px',
         height: '120px',
+        width: "120px",
         margin: "40px"
       },
       name: {
@@ -64,7 +64,9 @@ export default React.createClass({
         <div style={style.header}>
           {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
         </div>
-        <img style={style.image} src={details.imgurl} />
+        <div style={style.imagecontainer}>
+          <img style={style.image} src={details.imgurl} />
+        </div>
       </div>
     )
   }

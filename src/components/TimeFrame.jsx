@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 
 let style = {
   timedivider: {
@@ -7,14 +8,19 @@ let style = {
   },
   timeframe: {
     alignSelf: 'center',
-    minWidth: "200px",
+    '@media (min-width: 700px)': {
+      minWidth: "200px",
+    },
+    '@media (max-width: 700px)': {
+      minWidth: "100px",
+    },
     fontStyle: 'italic',
     fontSize: '14px',
     textAlign: 'center',
     fontFamily: 'Poiret One'
   }
 }
-export default React.createClass({
+export default Radium(React.createClass({
   propTypes: {
     from: React.PropTypes.string.isRequired
   },
@@ -41,5 +47,5 @@ export default React.createClass({
       </div>
     )
   }
-});
+}));
 

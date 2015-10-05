@@ -1,13 +1,50 @@
-import React from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import cvApp from './reducers'
+import {combineReducers} from 'redux';
+import {HIDE_EXPERIENCE} from './actions';
+import _ from 'lodash';
 
-let store = createStore(cvApp);
+function experiences(state = setID(defaultexperiences), action) {
+  switch(action.type) {
+    case HIDE_EXPERIENCE:
+      let newState = _.map(state, (exp) => {
+        if (exp.id === action.experience.id) {
+          exp.status = 'HIDE';
+        }
+        return exp;
+      });
+      return newState;
+    default:
+      return state
+  }
+}
 
-import CV from './components/Cv.jsx';
+function setID(state) {
+  return state.map( (exp, i) => {
+    exp.id = i;
+    return exp;
+  });
+}
 
-const experiences = [
+let defaultDetails = {
+  name: "Simon Ström",
+  email: "simon.strom@gmail.com",
+  phone: "+46 (0) 739 59 09 87",
+  imgurl: "http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80",
+  address: {
+    street: "Kungshamra 35/A",
+    zip: "170 70",
+    city: "Solna"
+  },
+  resources: [
+    {title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom'},
+    {title: 'GitHub', url: 'https://github.com/sajmoon/'}
+  ]
+}
+
+function details(state = defaultDetails, action) {
+  return state;
+}
+
+const defaultexperiences = [
   {
     from: 'Dec 2014',
     type: 'WORK',
@@ -200,26 +237,10 @@ const experiences = [
   }
 ];
 
-const details = {
-  name: "Simon Ström",
-  email: "simon.strom@gmail.com",
-  phone: "+46 (0) 739 59 09 87",
-  imgurl: "http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80",
-  address: {
-    street: "Kungshamra 35/A",
-    zip: "170 70",
-    city: "Solna"
-  },
-  resources: [
-    {title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom'},
-    {title: 'GitHub', url: 'https://github.com/sajmoon/'}
-  ]
-}
+const cvApp = combineReducers({
+  experiences,
+  details
+})
 
-React.render(
-  <Provider store={store}>
-    {() => <CV experiences={experiences} details={details} />}
-  </Provider>,
-  document.getElementById('app')
-);
+export default cvApp;
 

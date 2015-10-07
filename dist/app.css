@@ -1,39 +1,14 @@
-body {
+@media screen and (min-width: 700px) /* Tablet */ {
   .container {
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-@media screen and (min-width: 980px) /* Desktop */ {
-  body {
-    .container {
-      width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) /* Tablet */ {
-  body {
-    max-width: 100%;
-    overflow-x:hidden;
-    /* background: blue; */
-    .container {
-      width: 100%
-    }
-  }
-}
-
-@media screen and (max-width: 500px) /* Mobile */ {
-  body {
-    max-width: 100%;
-    overflow-x:hidden;
-    .container {
-      width: 100%;
-    }
-    /* background: green; */
+@media only screen and (max-width: 700px) /* Tablet */ {
+  .container {
+    width: 100%
   }
 }
 

@@ -46,6 +46,19 @@ function details(state = defaultDetails, action) {
 
 const defaultexperiences = [
   {
+    from: 'Oct 2015',
+    type: 'WORK',
+    to: '',
+    title: 'Software Developer',
+    url: 'http://www.sqore.com/',
+    subtitle: 'Part time',
+    at: 'Sqore',
+    remarks: [
+      'Front-end development',
+      'Javascript, AngularJs'
+    ]
+  },
+  {
     from: 'Dec 2014',
     type: 'WORK',
     to: 'Sept 2015',

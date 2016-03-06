@@ -4,7 +4,9 @@ import Radium from 'radium';
 let style = {
   timedivider: {
     padding: "4",
-    display: 'block'
+    '@media (min-width: 700px)': {
+      display: 'block'
+    }
   },
   timeframe: {
     alignSelf: 'center',
@@ -12,12 +14,15 @@ let style = {
       minWidth: "200px",
     },
     '@media (max-width: 700px)': {
-      minWidth: "100px",
+      display: 'flex',
+      flexDirection: 'row',
+      marginTop: '20px',
+      marginBottom: '20px'
     },
     fontStyle: 'italic',
     fontSize: '14px',
     textAlign: 'center',
-    fontFamily: 'Poiret One'
+    fontFamily: 'Poiret One',
   }
 }
 export default Radium(React.createClass({

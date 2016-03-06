@@ -1,5 +1,6 @@
 import React from 'react';
 import Experience from './Experience.jsx';
+import {hideExperience} from '../actions';
 
 export default React.createClass({
   propTypes: {
@@ -16,7 +17,7 @@ export default React.createClass({
       header: {
         fontFamily: 'Roboto Slab',
         textAlign: 'center',
-        fontSize: '1.7em',
+        fontSize: '1.8em',
         paddingBottom: "1rem"
       },
       container: {
@@ -24,6 +25,11 @@ export default React.createClass({
       },
       divider: {
         marginTop: "3rem"
+      },
+      hidden: {
+        display: 'none'
+      },
+      visible: {
       }
     }
 
@@ -32,7 +38,9 @@ export default React.createClass({
       block = (
         <div style={style.container}>
           <h2 style={ style.header }>{ type }</h2>
-          {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} onHideClick={ () => { this.props.onHideClick(experience) } } />)}
+          <div>
+            {experiences.sort( (a,b) => b.from - a.from).map( (experience, i) => <Experience key={i} experience={experience} index={i} onHideClick={ () => { this.props.onHideClick(experience) } } />)}
+          </div>
           <hr style={style.divider}/>
         </div>
       )

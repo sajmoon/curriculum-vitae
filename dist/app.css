@@ -1,21 +1,25 @@
-@media screen and (min-width: 700px) /* Tablet */ {
+@media screen and (min-width: 700px) {
   .container {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
-}
 
-@media only screen and (max-width: 700px) /* Tablet */ {
-  .container {
-    width: 100%
+  .flexbox-container {
+    display: flex;
+    display: -webkit-flex;
   }
 }
 
-/* Radium has limited vendor prefixing. */
-.flexbox-container {
-  display: flex;
-  display: -webkit-flex;
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 100%
+  }
+
+  .flexbox-container {
+    display: flex;
+    display: -webkit-flex;
+  }
 }
 
 body {

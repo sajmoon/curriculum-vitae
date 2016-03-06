@@ -8,8 +8,8 @@ export default React.createClass({
         textDecoration: 'none',
         color: 'grey',
         fontFamily: 'Montserrat',
-        display: 'block',
         paddingBottom: '10px',
+        paddingRight: '10px',
         textAlign: 'right'
       }
     }

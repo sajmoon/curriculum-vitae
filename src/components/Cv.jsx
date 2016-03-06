@@ -8,7 +8,7 @@ class Cv extends Component {
   handleHideClick(id) {
     const { dispatch } = this.props;
 
-   dispatch(hideExperience(id));
+    dispatch(hideExperience(id));
   }
 
   render() {

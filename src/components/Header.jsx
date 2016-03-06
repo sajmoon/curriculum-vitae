@@ -19,17 +19,19 @@ export default React.createClass({
       },
       header: {
         padding: "40px",
-        width: '33%'
+        minWidth: '33%'
       },
       container: {
         display: 'flex'
       },
       image: {
         alignItem: 'center',
-        border: "8px solid #eee",
+        border: "4px solid #eee",
         height: '120px',
         width: "120px",
-        margin: "40px"
+        margin: "40px",
+        borderRadius: '50%',
+        marginRight: '20px'
       },
       name: {
         fontSize: "2rem",
@@ -54,6 +56,9 @@ export default React.createClass({
         fontSize: '12px',
         letterSpacing: '1px',
         fontFamily: 'Poiret One'
+      },
+      resource_list: {
+        paddingTop: '20px'
       }
     }
 
@@ -67,10 +72,11 @@ export default React.createClass({
             <span style={style.address}>{details.address.street}</span>
             <span style={style.address}>{details.address.city}</span>
             <span style={style.address}>{details.address.zip}</span>
+            <div style={style.resource_list}>
+              {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
+            </div>
           </div>
-          <div style={style.header}>
-            {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
-          </div>
+
           <div style={style.imagecontainer}>
             <img style={style.image} src={details.imgurl} />
           </div>

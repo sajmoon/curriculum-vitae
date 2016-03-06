@@ -6,6 +6,7 @@ import cvApp from './reducers'
 let store = createStore(cvApp);
 
 import CV from './components/Cv.jsx';
+import Header from './components/Header.jsx';
 
 const experiences = [
   {
@@ -218,7 +219,12 @@ const details = {
 
 React.render(
   <Provider store={store}>
-    {() => <CV experiences={experiences} details={details} />}
+    {() =>
+      <div>
+        <Header details={details} />
+        <CV experiences={experiences} details={details} />
+      </div>
+    }
   </Provider>,
   document.getElementById('app')
 );

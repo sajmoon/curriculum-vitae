@@ -2,7 +2,6 @@ import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import {hideExperience} from '../actions';
 import Experiences from './Experiences.jsx';
-import Header from './Header.jsx';
 import _ from 'lodash';
 
 class Cv extends Component {
@@ -32,8 +31,7 @@ class Cv extends Component {
     });
 
     return (
-      <div>
-        <Header details={details} />
+      <div className="container">
         <Experiences onHideClick={ (e) => this.handleHideClick(e) } type="Work Life Experiences" experiences={work}/>
         <Experiences onHideClick={ this.handleHideClick } type="Commission of Trust" experiences={commisions}/>
         <Experiences onHideClick={ this.handleHideClick } type="Education" experiences={education}/>

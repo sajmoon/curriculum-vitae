@@ -29,6 +29,7 @@ let defaultDetails = {
   email: "simon.strom@gmail.com",
   phone: "+46 (0) 739 59 09 87",
   imgurl: "http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80",
+  coverImg: "http://blog.simonstrom.xyz/assets/img/cover-1.jpg",
   address: {
     street: "Kungshamra 35/A",
     zip: "170 70",
@@ -51,7 +52,6 @@ const defaultexperiences = [
     to: '',
     title: 'Software Developer',
     url: 'http://www.sqore.com/',
-    subtitle: 'Part time',
     at: 'Sqore',
     remarks: [
       'Front-end development',
@@ -64,12 +64,14 @@ const defaultexperiences = [
     to: 'Sept 2015',
     title: 'Software Developer',
     url: 'http://www.dewire.com/',
-    subtitle: 'Full time',
+    subtitle: '',
     at: 'Dewire',
     remarks: [
       'Software developer with focus on Java/JavaEE',
       'Backend work',
-      'AngularJs'
+      'AngularJs',
+      'JavaEE',
+      'Telecom'
     ]
   },
   {

@@ -18,6 +18,10 @@
   display: -webkit-flex;
 }
 
+body {
+  margin: 0
+}
+
 ul li {
   margin-top: 5px;
 }

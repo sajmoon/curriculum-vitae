@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Resource from './Resource.jsx';
+import { colors } from '../configuration'
 
 export default React.createClass({
   propType: {
@@ -14,8 +15,8 @@ export default React.createClass({
     let style = {
       topbar: {
         margin: '0px',
-        background: '#77ADBF',
-        color: 'white'
+        background: colors.topbar.background,
+        color: colors.topbar.font
       },
       header: {
         padding: "40px",

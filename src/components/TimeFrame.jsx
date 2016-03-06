@@ -19,7 +19,6 @@ let style = {
       marginTop: '20px',
       marginBottom: '20px'
     },
-    fontStyle: 'italic',
     fontSize: '14px',
     textAlign: 'center',
     fontFamily: 'Poiret One',

@@ -6,7 +6,7 @@ export default React.createClass({
     var style = {
       url: {
         textDecoration: 'none',
-        color: 'grey',
+        color: 'white',
         fontFamily: 'Montserrat',
         paddingBottom: '10px',
         paddingRight: '10px',

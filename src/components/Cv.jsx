@@ -31,7 +31,7 @@ class Cv extends Component {
     });
 
     return (
-      <div className="container">
+      <div>
         <Experiences onHideClick={ (e) => this.handleHideClick(e) } type="Work Life Experiences" experiences={work}/>
         <Experiences onHideClick={ this.handleHideClick } type="Commission of Trust" experiences={commisions}/>
         <Experiences onHideClick={ this.handleHideClick } type="Education" experiences={education}/>

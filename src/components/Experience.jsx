@@ -3,6 +3,7 @@ import Radium from 'radium';
 import TimeFrame from './TimeFrame.jsx';
 import HideButton from './HideButton.jsx';
 import {hideExperience} from '../actions';
+import { colors } from '../configuration'
 
 export default Radium(React.createClass({
   propTypes: {
@@ -16,14 +17,22 @@ export default Radium(React.createClass({
     }
 
     let style = {
-      container: {
-        wordWrap: 'break-word',
-        display: 'flex',
+      row: {
+        padding: "15px",
         fontFamily: 'Montserrat',
-        padding: "10px",
+        wordWrap: 'break-word',
+      },
+      container: {
+        display: 'flex',
+        flexDirection: 'row',
+        '@media (min-width: 700px)': {
+          maxWidth: '900px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        },
         '@media (max-width: 700px)': {
           flexDirection: 'column'
-        },
+        }
       },
       details: {
         fontFamily: 'Roboto Slab'
@@ -48,17 +57,27 @@ export default Radium(React.createClass({
       },
     }
 
-    let oddeven = {backgroundColor: '#F8F8FB'};
+
+    let odd = {
+      backgroundColor: colors.experience.odd
+    };
+    let even = {
+      backgroundColor: colors.experience.even
+    }
+    let oddeven = {}
     if (this.props.index % 2 == 0) {
-      oddeven = {}
+      oddeven = even
+    } else {
+      oddeven = odd
     }
 
     let component = (
-      <div style={[style.container, oddeven ]}>
+      <div style={[style.row, oddeven]}>
+      <div style={style.container}>
         <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>
           <HideButton onHideClick={this.props.onHideClick} />
-          <a href={experience.url} style={style.company}>{experience.at}</a>
+          <a target="_blank" href={experience.url} style={style.company}>{experience.at}</a>
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>
           <ul>
@@ -66,6 +85,7 @@ export default Radium(React.createClass({
           </ul>
         </div>
       </div>
+    </div>
     )
 
     if (experience.hide) {

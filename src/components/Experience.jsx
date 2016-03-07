@@ -49,8 +49,12 @@ export default Radium(React.createClass({
       title: {
         fontWeight: '700',
         fontFamily: 'Montserrat',
-        margin: '3px',
-        color: '#7E3548'
+        marginLeft: '3px',
+        color: '#7E3548',
+        '@media (max-width: 700px)': {
+          display: 'block',
+          textAlign: 'center',
+        }
       },
       company: {
         textTransform: 'uppercase',
@@ -60,9 +64,9 @@ export default Radium(React.createClass({
         fontSize: '1.2rem',
         textDecoration: 'none',
         color: 'black',
-        ':hover': {
-          color: 'grey',
-          textDecoration: 'underline',
+        '@media (max-width: 700px)': {
+          display: 'block',
+          textAlign: 'center',
         }
       },
     }
@@ -80,7 +84,6 @@ export default Radium(React.createClass({
       <div style={style.container}>
         <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>
-          <HideButton onHideClick={this.props.onHideClick} />
           <a target="_blank" href={experience.url} style={style.company}>{experience.at}</a>
           <span style={style.title}>{experience.title}</span>
           <span>{experience.subtitle}</span>

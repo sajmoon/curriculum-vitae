@@ -27,9 +27,9 @@ export default React.createClass({
       },
       image: {
         alignItem: 'center',
-        border: "4px solid #eee",
-        height: '120px',
-        width: "120px",
+        border: "2px solid #eee",
+        height: '140px',
+        width: "140px",
         margin: "40px",
         borderRadius: '50%',
         marginRight: '20px'

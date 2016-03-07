@@ -17,8 +17,9 @@ var colors = {
       background: tinycolor(base.tertiary).desaturate(30).spin(-15).lighten(30).toHexString(),
       font: tinycolor('white').darken(5).toHexString(),
     },
-    odd: tinycolor(base.secondary).lighten(15).toHexString(),
+    odd: tinycolor(base.secondary).lighten(16).toHexString(),
     even: tinycolor(base.secondary).brighten(10).lighten(10).toHexString(),
+    hover: tinycolor(base.secondary).darken(1).toHexString()
   }
 }
 

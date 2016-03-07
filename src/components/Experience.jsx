@@ -21,6 +21,15 @@ export default Radium(React.createClass({
         padding: "15px",
         fontFamily: 'Montserrat',
         wordWrap: 'break-word',
+        ':hover': {
+          backgroundColor: colors.experience.hover
+        },
+      },
+      odd: {
+        backgroundColor: colors.experience.odd
+      },
+      even: {
+        backgroundColor: colors.experience.even
       },
       container: {
         display: 'flex',
@@ -59,21 +68,15 @@ export default Radium(React.createClass({
     }
 
 
-    let odd = {
-      backgroundColor: colors.experience.odd
-    };
-    let even = {
-      backgroundColor: colors.experience.even
-    }
     let oddeven = {}
     if (this.props.index % 2 == 0) {
-      oddeven = even
+      oddeven = 'even'
     } else {
-      oddeven = odd
+      oddeven = 'odd'
     }
 
     let component = (
-      <div style={[style.row, oddeven]}>
+    <div key={experience.id} style={[style.row, style[oddeven]]}>
       <div style={style.container}>
         <TimeFrame to={experience.to} from={experience.from}/>
         <div style={style.details}>

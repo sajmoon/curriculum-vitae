@@ -209,7 +209,8 @@ const details = {
   address: {
     street: "Kungshamra 35/A",
     zip: "170 70",
-    city: "Solna"
+    city: "Solna",
+    country: "Sweden"
   },
   resources: [
     {title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom'},

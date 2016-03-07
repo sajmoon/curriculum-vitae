@@ -39,6 +39,11 @@ export default React.createClass({
         fontFamily: 'Montserrat',
         display: "block"
       },
+      country: {
+        fontFamily: 'Montserrat',
+        display: "block",
+        fontSize: '12px',
+      },
       email: {
         display: "block",
         textTransform: 'uppercase',
@@ -54,7 +59,7 @@ export default React.createClass({
       },
       address: {
         paddingRight: "5px",
-        fontSize: '12px',
+        fontSize: '13px',
         letterSpacing: '1px',
         fontFamily: 'Poiret One'
       },
@@ -73,6 +78,7 @@ export default React.createClass({
             <span style={style.address}>{details.address.street}</span>
             <span style={style.address}>{details.address.city}</span>
             <span style={style.address}>{details.address.zip}</span>
+            <span style={style.country}>{details.address.country}</span>
             <div style={style.resource_list}>
               {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
             </div>

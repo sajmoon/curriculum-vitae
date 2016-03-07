@@ -40,7 +40,8 @@ export default Radium(React.createClass({
       title: {
         fontWeight: '700',
         fontFamily: 'Montserrat',
-        margin: '3px'
+        margin: '3px',
+        color: '#7E3548'
       },
       company: {
         textTransform: 'uppercase',

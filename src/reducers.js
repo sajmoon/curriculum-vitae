@@ -55,7 +55,7 @@ const defaultexperiences = [
     url: 'http://www.sqore.com/',
     at: 'Sqore',
     remarks: [
-      'Front-end development',
+      'Full stack',
       'Javascript, AngularJs'
     ]
   },
@@ -70,8 +70,8 @@ const defaultexperiences = [
     remarks: [
       'Software developer with focus on Java/JavaEE',
       'Backend work',
-      'AngularJs',
       'JavaEE',
+      'AngularJs',
       'Telecom'
     ]
   },
@@ -85,7 +85,8 @@ const defaultexperiences = [
     at: 'Elva',
     remarks: [
       'Developer',
-      'Java and JavaScript',
+      'JavaEE',
+      'JavaScript',
       'Internal projects'
     ]
   },
@@ -110,7 +111,9 @@ const defaultexperiences = [
     title: 'Software developer',
     url: 'http://www.comers.se/',
     subtitle: '',
-    remarks: ['Worked with Java, creating a webapplication for bookings']
+    remarks: [
+      'Worked with Java, creating a webapplication for bookings',
+    ]
   },
   {
     at: 'Student Consulting',

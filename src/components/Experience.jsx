@@ -50,6 +50,7 @@ export default Radium(React.createClass({
         fontWeight: '700',
         fontFamily: 'Montserrat',
         marginLeft: '3px',
+        marginRight: '3px',
         color: '#7E3548',
         '@media (max-width: 700px)': {
           display: 'block',

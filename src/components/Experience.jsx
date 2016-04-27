@@ -29,7 +29,7 @@ export default Radium(React.createClass({
         backgroundColor: colors.experience.odd
       },
       even: {
-        backgroundColor: colors.experience.even
+        backgroundColor: colors.experience.even,
       },
       container: {
         display: 'flex',

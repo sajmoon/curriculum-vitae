@@ -15,7 +15,7 @@ config.plugins = config.plugins.concat([
       comments: false
     },
     compress: {
-      warnings: false,
+      warnings: true,
       screw_ie8: true
     }
   }),

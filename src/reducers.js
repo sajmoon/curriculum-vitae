@@ -262,4 +262,3 @@ const cvApp = combineReducers({
 })
 
 export default cvApp;
-

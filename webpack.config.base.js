@@ -3,7 +3,7 @@ var path = require('path');
 
 function getEntrySources(sources) {
   if (process.env.NODE_ENV !== 'production') {
-    console.log("process.env.NODE_ENV", process.env.NODE_ENV)
+    console.log(">> process.env.NODE_ENV", process.env.NODE_ENV)
     sources.push('webpack-dev-server/client?http://localhost:8080');
     sources.push('webpack/hot/only-dev-server');
   }

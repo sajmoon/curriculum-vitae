@@ -3,7 +3,7 @@ import Radium from 'radium';
 
 let style = {
   timedivider: {
-    padding: "4",
+    padding: '4px',
     '@media (min-width: 700px)': {
       display: 'block'
     }
@@ -11,7 +11,7 @@ let style = {
   timeframe: {
     alignSelf: 'center',
     '@media (min-width: 700px)': {
-      minWidth: "200px",
+      minWidth: '200px',
     },
     '@media (max-width: 700px)': {
       display: 'flex',

@@ -25,16 +25,16 @@ function setID(state) {
 }
 
 let defaultDetails = {
-  name: "Simon Ström",
-  email: "simon.strom@gmail.com",
-  phone: "+46 (0) 739 59 09 87",
-  imgurl: "http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80",
-  coverImg: "http://blog.simonstrom.xyz/assets/img/cover-1.jpg",
+  name: 'Simon Ström',
+  email: 'simon.strom@gmail.com',
+  phone: '+46 (0) 739 59 09 87',
+  imgurl: 'http://s.gravatar.com/avatar/26f491425e1e0507069ee7d86fa058ed?s=80',
+  coverImg: 'http://blog.simonstrom.xyz/assets/img/cover-1.jpg',
   address: {
-    street: "Kungshamra 35/A",
-    zip: "170 70",
-    city: "Solna",
-    country: "Sweden"
+    street: 'Kungshamra 35/A',
+    zip: '170 70',
+    city: 'Solna',
+    country: 'Sweden'
   },
   resources: [
     {title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom'},
@@ -56,7 +56,7 @@ const defaultexperiences = [
     at: 'Sqore',
     remarks: [
       'Full stack',
-      'Javascript, AngularJs'
+      'Javascript, Ruby, AngularJs, React'
     ]
   },
   {

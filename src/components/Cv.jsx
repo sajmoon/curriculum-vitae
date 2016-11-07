@@ -1,6 +1,6 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {hideExperience} from '../actions';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { hideExperience } from '../actions';
 import Experiences from './Experiences.jsx';
 import _ from 'lodash';
 
@@ -48,7 +48,7 @@ Cv.propTypes = {
   details: PropTypes.object.isRequired
 }
 
-function select(state) {
+function mapStateToProps(state) {
   let filteredExperiences = state.experiences.filter( (exp) => {
     return exp.status !== 'HIDE';
   })
@@ -58,4 +58,6 @@ function select(state) {
   }
 }
 
-export default connect(select)(Cv);
+export default connect(
+  mapStateToProps
+)(Cv);

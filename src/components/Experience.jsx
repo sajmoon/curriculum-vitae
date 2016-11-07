@@ -5,10 +5,11 @@ import HideButton from './HideButton.jsx';
 import {hideExperience} from '../actions';
 import { colors } from '../configuration'
 
-export default Radium(React.createClass({
-  propTypes: {
-    experience: React.PropTypes.object
-  },
+class Experience extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     const {dispatch, experience} = this.props;
 
@@ -18,7 +19,7 @@ export default Radium(React.createClass({
 
     let style = {
       row: {
-        padding: "15px",
+        padding: '15px',
         fontFamily: 'Montserrat',
         wordWrap: 'break-word',
         ':hover': {
@@ -102,5 +103,7 @@ export default Radium(React.createClass({
       return component;
     }
   }
-}));
+}
+
+export default Radium(Experience)
 

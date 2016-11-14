@@ -1,12 +1,16 @@
-import {combineReducers} from 'redux';
-import {HIDE_EXPERIENCE} from './actions';
-import _ from 'lodash';
+import { combineReducers } from 'redux'
+import {
+  HIDE_EXPERIENCE_GROUP,
+  TOGGLE_VISISBLE_GROUP
+} from './actions'
+
+import _ from 'lodash'
 
 function experiences(state = setID(defaultexperiences), action) {
   switch(action.type) {
-    case HIDE_EXPERIENCE:
+    case HIDE_EXPERIENCE_GROUP:
       let newState = _.map(state, (exp) => {
-        if (exp.id === action.experience.id) {
+        if (exp.type === action.group) {
           exp.status = 'HIDE';
         }
         return exp;
@@ -17,11 +21,55 @@ function experiences(state = setID(defaultexperiences), action) {
   }
 }
 
+const initialGroups = {
+  groupsById: {
+    'WORK': {
+      name: 'Work experiences'
+    },
+    'OTHER': {
+      name: 'Other'
+    },
+    'EDUCATION': {
+      name: 'Educational background'
+    },
+    'COMMISSION': {
+      name: 'Commision of Trust'
+    }
+  },
+  visibility: {
+    'WORK': true,
+    'EDUCATION': true,
+    'COMMISSION': true,
+    'OTHER': true,
+  }
+}
+
+const groups = (state = initialGroups, action) => {
+  switch(action.type) {
+    case TOGGLE_VISISBLE_GROUP:
+      return Object.assign(
+        {},
+        state,
+        {
+          visibility: Object.assign(
+            {},
+            state.visibility,
+            {
+              [action.group]: !state.visibility[action.group]
+            }
+          )
+        }
+      )
+    default:
+      return state
+  }
+}
+
 function setID(state) {
   return state.map( (exp, i) => {
     exp.id = i;
     return exp;
-  });
+  })
 }
 
 let defaultDetails = {
@@ -254,11 +302,12 @@ const defaultexperiences = [
     remarks: ['Military Service in Sweden', 'Leader of a pluton of around 60 people.']
 
   }
-];
+]
 
 const cvApp = combineReducers({
+  details,
   experiences,
-  details
+  groups
 })
 
 export default cvApp;

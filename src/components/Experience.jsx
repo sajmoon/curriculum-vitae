@@ -11,7 +11,7 @@ class Experience extends React.Component {
   }
 
   render() {
-    const {dispatch, experience} = this.props;
+    const { dispatch, experience } = this.props
 
     let getRemarks = () => {
       return experience.remarks || [];
@@ -82,19 +82,19 @@ class Experience extends React.Component {
     }
 
     let component = (
-    <div key={experience.id} style={[style.row, style[oddeven]]}>
-      <div style={style.container}>
-        <TimeFrame to={experience.to} from={experience.from}/>
-        <div style={style.details}>
-          <a target="_blank" href={experience.url} style={style.company}>{experience.at}</a>
-          <span style={style.title}>{experience.title}</span>
-          <span>{experience.subtitle}</span>
-          <ul>
-            {getRemarks().map( (remark, i) => <li key={i}>{remark}</li>)}
-          </ul>
+      <div key={experience.id} style={[style.row, style[oddeven]]}>
+        <div style={style.container}>
+          <TimeFrame to={experience.to} from={experience.from}/>
+          <div style={style.details}>
+            <a target="_blank" href={experience.url} style={style.company}>{experience.at}</a>
+            <span style={style.title}>{experience.title}</span>
+            <span>{experience.subtitle}</span>
+            <ul>
+              {getRemarks().map( (remark, i) => <li key={i}>{remark}</li>)}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     )
 
     if (experience.hide) {

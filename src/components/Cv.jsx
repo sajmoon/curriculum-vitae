@@ -1,41 +1,43 @@
-import React, { PropTypes, Component } from 'react';
-import { connect } from 'react-redux';
-import { hideExperience } from '../actions';
-import Experiences from './Experiences.jsx';
-import _ from 'lodash';
+import React, { PropTypes, Component } from 'react'
+
+import { connect } from 'react-redux'
+import _ from 'lodash'
+
+import {
+  toggleVisiblityGroup,
+  hideExperienceGroup
+} from '../actions'
+
+import Experiences from './Experiences.jsx'
 
 class Cv extends Component {
-  handleHideClick(id) {
-    const { dispatch } = this.props;
+  constructor(props) {
+    super(props)
 
-    dispatch(hideExperience(id));
+    this.handleHideClick = this.handleHideClick.bind(this)
+  }
+
+  handleHideClick(type) {
+    let { dispatch } = this.props
+    dispatch(toggleVisiblityGroup(type))
   }
 
   render() {
-    let {experiences, details} = this.props;
-
-    let work = _.filter(experiences, (exp) => {
-      return exp.type === 'WORK';
-    });
-
-    let other = _.filter(experiences, (exp) => {
-      return exp.type === 'OTHER';
-    });
-
-    let commisions = _.filter(experiences, (exp) => {
-      return exp.type === 'COMMISSION';
-    });
-
-    let education = _.filter(experiences, (exp) => {
-      return exp.type === 'EDUCATION';
-    });
+    let { experiences, details, groups } = this.props
 
     return (
       <div>
-        <Experiences onHideClick={ (e) => this.handleHideClick(e) } type="Work Life Experiences" experiences={work}/>
-        <Experiences onHideClick={ this.handleHideClick } type="Commission of Trust" experiences={commisions}/>
-        <Experiences onHideClick={ this.handleHideClick } type="Education" experiences={education}/>
-        <Experiences onHideClick={ this.handleHideClick } type="Other" experiences={other}/>
+        { groups.map( (group, index) => {
+          return (
+            <Experiences
+              key={index}
+              onHideClick={ this.handleHideClick }
+              type={ group.type }
+              header={ group.name }
+              hidden={ group.hide }
+              experiences={ experiences } />
+          )
+        })}
       </div>
     )
   }
@@ -52,12 +54,23 @@ function mapStateToProps(state) {
   let filteredExperiences = state.experiences.filter( (exp) => {
     return exp.status !== 'HIDE';
   })
+
+  let groups = Object.keys(state.groups.visibility).map( (group) => {
+    return Object.assign(
+      {},
+      state.groups.groupsById[group],
+      { type: group },
+      { hide: !state.groups.visibility[group] }
+    )
+  })
+
   return {
     experiences: filteredExperiences,
-    details: state.details
+    details: state.details,
+    groups: groups
   }
 }
 
 export default connect(
   mapStateToProps
-)(Cv);
+)(Cv)

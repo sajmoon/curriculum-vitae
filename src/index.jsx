@@ -6,20 +6,7 @@ import cvApp from './reducers'
 
 let store = createStore(cvApp)
 
-import CV from './components/Cv.jsx';
-import Header from './components/Header.jsx';
-
-import {StyleRoot} from 'radium';
-
-const App = () => {
-  return (
-    <StyleRoot>
-      <Header />
-      <CV />
-    </StyleRoot>
-  )
-}
-
+import App from './components/app'
 
 render(
   <Provider store={store}>

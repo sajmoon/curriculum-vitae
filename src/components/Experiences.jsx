@@ -29,6 +29,7 @@ const Experiences = (props) => {
       <div style={ style.header }>
         <h2>
           { header }
+          <small style={{fontSize: '18px'}}> ({ currentExperiences.length })</small>
           <span style={{padding: '20px', fontSize: '18px'}} onClick={ () => { props.onHideClick(type) } }>
             { !hidden && <i className="fa fa-caret-square-o-up" aria-hidden="true"></i> }
             { !!hidden && <i className="fa fa-caret-square-o-down" aria-hidden="true"></i> }

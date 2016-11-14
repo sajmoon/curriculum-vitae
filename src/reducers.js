@@ -38,9 +38,9 @@ const initialGroups = {
   },
   visibility: {
     'WORK': true,
-    'EDUCATION': true,
-    'COMMISSION': true,
-    'OTHER': true,
+    'EDUCATION': false,
+    'COMMISSION': false,
+    'OTHER': false,
   }
 }
 

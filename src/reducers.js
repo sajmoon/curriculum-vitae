@@ -1,21 +1,21 @@
 import { combineReducers } from 'redux'
 import {
   HIDE_EXPERIENCE_GROUP,
-  TOGGLE_VISISBLE_GROUP
+  TOGGLE_VISISBLE_GROUP,
 } from './actions'
 
 import _ from 'lodash'
 
 function experiences(state = setID(defaultexperiences), action) {
-  switch(action.type) {
+  switch (action.type) {
     case HIDE_EXPERIENCE_GROUP:
-      let newState = _.map(state, (exp) => {
+      const newState = _.map(state, (exp) => {
         if (exp.type === action.group) {
-          exp.status = 'HIDE';
+          exp.status = 'HIDE'
         }
-        return exp;
-      });
-      return newState;
+        return exp
+      })
+      return newState
     default:
       return state
   }
@@ -23,29 +23,29 @@ function experiences(state = setID(defaultexperiences), action) {
 
 const initialGroups = {
   groupsById: {
-    'WORK': {
-      name: 'Work experiences'
+    WORK: {
+      name: 'Work experiences',
     },
-    'OTHER': {
-      name: 'Other'
+    OTHER: {
+      name: 'Other',
     },
-    'EDUCATION': {
-      name: 'Educational background'
+    EDUCATION: {
+      name: 'Educational background',
     },
-    'COMMISSION': {
-      name: 'Commision of Trust'
-    }
+    COMMISSION: {
+      name: 'Commision of Trust',
+    },
   },
   visibility: {
-    'WORK': true,
-    'EDUCATION': false,
-    'COMMISSION': false,
-    'OTHER': false,
-  }
+    WORK: true,
+    EDUCATION: false,
+    COMMISSION: false,
+    OTHER: false,
+  },
 }
 
 const groups = (state = initialGroups, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case TOGGLE_VISISBLE_GROUP:
       return Object.assign(
         {},
@@ -55,10 +55,10 @@ const groups = (state = initialGroups, action) => {
             {},
             state.visibility,
             {
-              [action.group]: !state.visibility[action.group]
-            }
-          )
-        }
+              [action.group]: !state.visibility[action.group],
+            },
+          ),
+        },
       )
     default:
       return state
@@ -66,13 +66,13 @@ const groups = (state = initialGroups, action) => {
 }
 
 function setID(state) {
-  return state.map( (exp, i) => {
-    exp.id = i;
-    return exp;
+  return state.map((exp, i) => {
+    exp.id = i
+    return exp
   })
 }
 
-let defaultDetails = {
+const defaultDetails = {
   name: 'Simon Ström',
   email: 'simon.strom@gmail.com',
   phone: '+46 (0) 739 59 09 87',
@@ -82,16 +82,16 @@ let defaultDetails = {
     street: 'Kungshamra 35/A',
     zip: '170 70',
     city: 'Solna',
-    country: 'Sweden'
+    country: 'Sweden',
   },
   resources: [
-    {title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom'},
-    {title: 'GitHub', url: 'https://github.com/sajmoon/'}
-  ]
+    { title: 'LinkedIn', url: 'https://se.linkedin.com/in/simonstrom' },
+    { title: 'GitHub', url: 'https://github.com/sajmoon/' },
+  ],
 }
 
 function details(state = defaultDetails, action) {
-  return state;
+  return state
 }
 
 const defaultexperiences = [
@@ -104,8 +104,8 @@ const defaultexperiences = [
     at: 'Sqore',
     remarks: [
       'Full stack',
-      'Javascript, Ruby, AngularJs, React'
-    ]
+      'Javascript, Ruby, AngularJs, React',
+    ],
   },
   {
     from: 'Dec 2014',
@@ -120,8 +120,8 @@ const defaultexperiences = [
       'Backend work',
       'JavaEE',
       'AngularJs',
-      'Telecom'
-    ]
+      'Telecom',
+    ],
   },
   {
     from: '2013',
@@ -135,8 +135,8 @@ const defaultexperiences = [
       'Developer',
       'JavaEE',
       'JavaScript',
-      'Internal projects'
-    ]
+      'Internal projects',
+    ],
   },
   {
     at: 'Hi3G (Tre)',
@@ -148,8 +148,8 @@ const defaultexperiences = [
     subtitle: '',
     remarks: [
       'Small group of students, planing and executing a project.',
-      'Working with Java, Ruby and Angular'
-    ]
+      'Working with Java, Ruby and Angular',
+    ],
   },
   {
     at: 'Transitor AB',
@@ -161,7 +161,7 @@ const defaultexperiences = [
     subtitle: '',
     remarks: [
       'Worked with Java, creating a webapplication for bookings',
-    ]
+    ],
   },
   {
     at: 'Student Consulting',
@@ -171,7 +171,7 @@ const defaultexperiences = [
     to: '2008',
     title: 'Reception duty',
     remarks: ['Reception', 'Handyman'],
-    subtitle: ''
+    subtitle: '',
   },
   {
     at: 'Procter & Gamble',
@@ -181,7 +181,7 @@ const defaultexperiences = [
     title: 'Several positions',
     remarks: ['Masterdata', 'Demand planer Duracel (summer intern)'],
     subtitle: '',
-    type: 'WORK'
+    type: 'WORK',
   },
   {
     at: 'Fastighets AB Brostaden',
@@ -191,7 +191,7 @@ const defaultexperiences = [
     url: 'http://www.brostaden.se/',
     title: 'Landlord',
     subtitle: 'Summer Internship',
-    remarks: ['Summer job working with customers', 'Cleaning, painting etc']
+    remarks: ['Summer job working with customers', 'Cleaning, painting etc'],
   },
   {
     at: 'Royal Institute of Technology',
@@ -200,7 +200,7 @@ const defaultexperiences = [
     from: '2009',
     title: 'Computer Science',
     subtitle: 'Msc',
-    remarks: ['Machine Learning']
+    remarks: ['Machine Learning'],
   },
   {
     at: 'Samskolan Saltsjöbaden',
@@ -210,7 +210,7 @@ const defaultexperiences = [
     to: '2006',
     title: 'International baccalaureate',
     subtitle: '',
-    remarks: ['Studied Math, Computer Science English on higher level.']
+    remarks: ['Studied Math, Computer Science English on higher level.'],
   },
   {
     at: 'THS',
@@ -220,7 +220,7 @@ const defaultexperiences = [
     to: '2013',
     title: 'Event Coordinator',
     subtitle: 'Centralamottagningsgrupp',
-    remarks: ['Organize events for new students at KTH']
+    remarks: ['Organize events for new students at KTH'],
   },
   {
     at: 'SSCO',
@@ -230,7 +230,7 @@ const defaultexperiences = [
     to: '2013',
     title: 'Event Coordinator',
     subtitle: 'Valborgsfamiljen',
-    remarks: ['Organize a pub crawl for around 1000 students in Stockholm']
+    remarks: ['Organize a pub crawl for around 1000 students in Stockholm'],
   },
   {
     at: 'Datasektionens Studieresa (Studs)',
@@ -240,7 +240,7 @@ const defaultexperiences = [
     to: '2013',
     title: 'Salesteam manager',
     subtitle: '',
-    remarks: ['Responsible for all sales', 'Managed the team']
+    remarks: ['Responsible for all sales', 'Managed the team'],
   },
   {
     at: 'Datasektionens Klubbmästeri, DKM',
@@ -250,7 +250,7 @@ const defaultexperiences = [
     to: '2013',
     title: 'Klubbmästare & Barmästare',
     subtitle: '',
-    remarks: ['Organiza all sorts of activities for students.', 'Lots of fun', 'Leader of a group of 14 people']
+    remarks: ['Organiza all sorts of activities for students.', 'Lots of fun', 'Leader of a group of 14 people'],
   },
   {
     at: 'Dartasektionens Mottagning',
@@ -269,7 +269,7 @@ const defaultexperiences = [
     title: 'Tältchef',
     type: 'COMMISSION',
     subtitle: '',
-    remarks: ['Organzie a huge event for students in Stockholm', 'Parade through town']
+    remarks: ['Organzie a huge event for students in Stockholm', 'Parade through town'],
   },
   {
     at: 'THS',
@@ -279,7 +279,7 @@ const defaultexperiences = [
     to: '2011',
     title: 'Armada',
     subtitle: 'Företagsvärd',
-    remarks: ['A fare for students to find jobs', 'Helped Skype and Epsilon during the days.', 'Active for 2 years']
+    remarks: ['A fare for students to find jobs', 'Helped Skype and Epsilon during the days.', 'Active for 2 years'],
   },
   {
     at: 'Datasektionen',
@@ -289,7 +289,7 @@ const defaultexperiences = [
     url: 'http://datasektionen.se/naringsliv/d-dagen',
     from: '2009',
     to: '2013',
-    remarks: ['Work fare for students interested in ComputerScience.', 'Helped organize it for 4 years']
+    remarks: ['Work fare for students interested in ComputerScience.', 'Helped organize it for 4 years'],
   },
   {
     at: 'Försvarsmakten',
@@ -299,15 +299,15 @@ const defaultexperiences = [
     title: 'Stridsfordonsplutonbefäl',
     subtitle: 'Värnplikt',
     url: 'http://www.forsvarsmakten.se/',
-    remarks: ['Military Service in Sweden', 'Leader of a pluton of around 60 people.']
+    remarks: ['Military Service in Sweden', 'Leader of a pluton of around 60 people.'],
 
-  }
+  },
 ]
 
 const cvApp = combineReducers({
   details,
   experiences,
-  groups
+  groups,
 })
 
-export default cvApp;
+export default cvApp

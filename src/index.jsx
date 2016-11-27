@@ -6,6 +6,7 @@ import cvApp from './reducers'
 
 let store = createStore(cvApp)
 
+import 'serviceWorker'
 import App from './components/app'
 
 render(
@@ -13,5 +14,4 @@ render(
     <App />
   </Provider>,
   document.getElementById('app')
-);
-
+)

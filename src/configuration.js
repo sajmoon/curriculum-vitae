@@ -1,16 +1,16 @@
 import tinycolor from 'tinycolor2'
 
-var base = {
+const base = {
   primary: '#9D96B8',
   secondary: '#A9CBB7',
   tertiary: 'blue',
-  complementary: '#7E3548'
+  complementary: '#7E3548',
 }
 
-var colors = {
+const colors = {
   topbar: {
     background: tinycolor(base.primary).saturate(3).toHexString(),
-    font: tinycolor('white').darken(5).toHexString()
+    font: tinycolor('white').darken(5).toHexString(),
   },
   experience: {
     header: {
@@ -19,10 +19,10 @@ var colors = {
     },
     odd: tinycolor(base.secondary).lighten(20).toHexString(),
     even: tinycolor(base.secondary).brighten(10).lighten(13).toHexString(),
-    hover: tinycolor(base.secondary).lighten(3).toHexString()
-  }
+    hover: tinycolor(base.secondary).lighten(3).toHexString(),
+  },
 }
 
 export {
-  colors
+  colors,
 }

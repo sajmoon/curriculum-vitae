@@ -1,36 +1,30 @@
-import React from 'react';
-import Radium from 'radium';
-import TimeFrame from './TimeFrame.jsx';
-import HideButton from './HideButton.jsx';
-import {hideExperience} from '../actions';
-import { colors } from '../configuration'
+import React, { PropTypes } from 'react'
+import Radium from 'radium'
+import TimeFrame from './TimeFrame'
+import colors from '../configuration'
 
 class Experience extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
-    const { dispatch, experience } = this.props
+    const { experience } = this.props
 
-    let getRemarks = () => {
-      return experience.remarks || [];
+    function getRemarks() {
+      return experience.remarks || []
     }
 
-    let style = {
+    const style = {
       row: {
         padding: '15px',
         fontFamily: 'Montserrat',
         wordWrap: 'break-word',
         ':hover': {
           backgroundColor: colors.experience.hover
-        },
+        }
       },
       odd: {
         backgroundColor: colors.experience.odd
       },
       even: {
-        backgroundColor: colors.experience.even,
+        backgroundColor: colors.experience.even
       },
       container: {
         display: 'flex',
@@ -38,7 +32,7 @@ class Experience extends React.Component {
         '@media (min-width: 700px)': {
           maxWidth: '900px',
           marginLeft: 'auto',
-          marginRight: 'auto',
+          marginRight: 'auto'
         },
         '@media (max-width: 700px)': {
           flexDirection: 'column'
@@ -55,7 +49,7 @@ class Experience extends React.Component {
         color: '#7E3548',
         '@media (max-width: 700px)': {
           display: 'block',
-          textAlign: 'center',
+          textAlign: 'center'
         }
       },
       company: {
@@ -68,29 +62,33 @@ class Experience extends React.Component {
         color: 'black',
         '@media (max-width: 700px)': {
           display: 'block',
-          textAlign: 'center',
+          textAlign: 'center'
         }
-      },
+      }
     }
 
 
     let oddeven = {}
-    if (this.props.index % 2 == 0) {
+    if (this.props.index % 2 === 0) {
       oddeven = 'even'
     } else {
       oddeven = 'odd'
     }
 
-    let component = (
+    const component = (
       <div key={experience.id} style={[style.row, style[oddeven]]}>
         <div style={style.container}>
-          <TimeFrame to={experience.to} from={experience.from}/>
+          <TimeFrame to={experience.to} from={experience.from} />
           <div style={style.details}>
-            <a target="_blank" href={experience.url} style={style.company}>{experience.at}</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={experience.url}
+              style={style.company}>{experience.at}</a>
             <span style={style.title}>{experience.title}</span>
             <span>{experience.subtitle}</span>
             <ul>
-              {getRemarks().map( (remark, i) => <li key={i}>{remark}</li>)}
+              {getRemarks().map((remark, i) => <li key={i}>{remark}</li>)}
             </ul>
           </div>
         </div>
@@ -98,11 +96,17 @@ class Experience extends React.Component {
     )
 
     if (experience.hide) {
-      return null;
-    } else {
-      return component;
+      return null
     }
+    return component
   }
+}
+
+Experience.propTypes = {
+  index: PropTypes.number.isRequired,
+  experience: PropTypes.shape({
+    id: PropTypes.string.required
+  }).isRequired
 }
 
 export default Radium(Experience)

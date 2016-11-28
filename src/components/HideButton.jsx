@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react'
 
-let style = {
+const style = {
   hideButton: {
     padding: '10px',
     cursor: 'pointer',
@@ -9,14 +9,14 @@ let style = {
 }
 
 export default class HideButton extends Component {
-  render() {
-    return (
-      <span style={style.hideButton} onClick={ e => this.handleClick(e)}>-</span>
-    )
+  handleClick(e) {
+    this.props.onHideClick(e)
   }
 
-  handleClick(e) {
-    this.props.onHideClick(e);
+  render() {
+    return (
+      <span style={style.hideButton} onClick={e => this.handleClick(e)}>-</span>
+    )
   }
 }
 

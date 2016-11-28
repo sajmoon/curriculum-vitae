@@ -1,8 +1,8 @@
-import React from 'react';
-
-import Resource from './Resource.jsx';
-import { colors } from '../configuration'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+
+import Resource from './Resource'
+import colors from '../configuration'
 
 const style = {
   topbar: {
@@ -34,7 +34,7 @@ const style = {
   country: {
     fontFamily: 'Montserrat',
     display: 'block',
-    fontSize: '12px',
+    fontSize: '12px'
   },
   email: {
     display: 'block',
@@ -60,44 +60,45 @@ const style = {
   }
 }
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+const Header = (props) => {
+  const { details } = props
 
-  render() {
-    let {details, address} = this.props;
-
-
-    return (
-      <div className='header' style={style.topbar}>
-        <div className='flexbox-container' style={style.container}>
-          <div style={style.header}>
-            <span style={style.name}>{details.name}</span>
-            <span style={style.email}>{details.email}</span>
-            <span style={style.phone}>{details.phone}</span>
-            <span style={style.address}>{details.address.street}</span>
-            <span style={style.address}>{details.address.city}</span>
-            <span style={style.address}>{details.address.zip}</span>
-            <span style={style.country}>{details.address.country}</span>
-            <div style={style.resource_list}>
-              {details.resources.map( (resource, i) => <Resource key={i} resource={resource} />)}
-            </div>
-          </div>
-
-          <div style={style.imagecontainer}>
-            <img style={style.image} src={details.imgurl} />
+  return (
+    <div className="header" style={style.topbar}>
+      <div className="flexbox-container" style={style.container}>
+        <div style={style.header}>
+          <span style={style.name}>{details.name}</span>
+          <span style={style.email}>{details.email}</span>
+          <span style={style.phone}>{details.phone}</span>
+          <span style={style.address}>{details.address.street}</span>
+          <span style={style.address}>{details.address.city}</span>
+          <span style={style.address}>{details.address.zip}</span>
+          <span style={style.country}>{details.address.country}</span>
+          <div style={style.resource_list}>
+            {details.resources.map((resource, i) => <Resource key={i} resource={resource} />)}
           </div>
         </div>
+
+        <div style={style.imagecontainer}>
+          <img alt="Simon" style={style.image} src={details.imgurl} />
+        </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     details: state.details
   }
+}
+
+Header.propTypes = {
+  details: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default connect(

@@ -1,14 +1,8 @@
 import React, { PropTypes, Component } from 'react'
-
 import { connect } from 'react-redux'
-import _ from 'lodash'
 
-import {
-  toggleVisiblityGroup,
-  hideExperienceGroup
-} from '../actions'
-
-import Experiences from './Experiences.jsx'
+import { toggleVisiblityGroup } from '../actions'
+import Experiences from './Experiences'
 
 class Cv extends Component {
   constructor(props) {
@@ -18,26 +12,24 @@ class Cv extends Component {
   }
 
   handleHideClick(type) {
-    let { dispatch } = this.props
+    const { dispatch } = this.props
     dispatch(toggleVisiblityGroup(type))
   }
 
   render() {
-    let { experiences, details, groups } = this.props
+    const { experiences, groups } = this.props
 
     return (
       <div>
-        { groups.map( (group, index) => {
-          return (
-            <Experiences
-              key={index}
-              onHideClick={ this.handleHideClick }
-              type={ group.type }
-              header={ group.name }
-              hidden={ group.hide }
-              experiences={ experiences } />
-          )
-        })}
+        { groups.map((group, index) =>
+          <Experiences
+            key={index}
+            onHideClick={this.handleHideClick}
+            type={group.type}
+            header={group.name}
+            hidden={group.hide}
+            experiences={experiences} />
+        )}
       </div>
     )
   }
@@ -45,29 +37,42 @@ class Cv extends Component {
 
 Cv.propTypes = {
   experiences: PropTypes.arrayOf(PropTypes.shape({
-    from: PropTypes.string.isRequired
+    from: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    remarks: PropTypes.array,
+    title: PropTypes.string.isRequired,
+    to: PropTypes.string,
+    type: PropTypes.string.isRequied,
+    url: PropTypes.string
   })),
-  details: PropTypes.object.isRequired
+  groups: PropTypes.arrayOf(
+    PropTypes.shape({
+      hide: PropTypes.bool.isRequired,
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired,
+  dispatch: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
-  let filteredExperiences = state.experiences.filter( (exp) => {
-    return exp.status !== 'HIDE';
-  })
+  const filteredExperiences = state.experiences.filter(exp =>
+    exp.status !== 'HIDE'
+  )
 
-  let groups = Object.keys(state.groups.visibility).map( (group) => {
-    return Object.assign(
+  const groups = Object.keys(state.groups.visibility).map(group =>
+    Object.assign(
       {},
       state.groups.groupsById[group],
       { type: group },
       { hide: !state.groups.visibility[group] }
     )
-  })
+  )
 
   return {
     experiences: filteredExperiences,
     details: state.details,
-    groups: groups
+    groups
   }
 }
 

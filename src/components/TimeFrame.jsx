@@ -1,7 +1,7 @@
-import React from 'react';
-import Radium from 'radium';
+import React, { PropTypes } from 'react'
+import Radium from 'radium'
 
-let style = {
+const style = {
   timedivider: {
     padding: '4px',
     '@media (min-width: 700px)': {
@@ -11,7 +11,7 @@ let style = {
   timeframe: {
     alignSelf: 'center',
     '@media (min-width: 700px)': {
-      minWidth: '200px',
+      minWidth: '200px'
     },
     '@media (max-width: 700px)': {
       display: 'flex',
@@ -21,35 +21,40 @@ let style = {
     },
     fontSize: '14px',
     textAlign: 'center',
-    fontFamily: 'Poiret One',
+    fontFamily: 'Poiret One'
   }
 }
-export default Radium(React.createClass({
-  propTypes: {
-    from: React.PropTypes.string.isRequired
-  },
 
-  render() {
-    let {to, from} = this.props;
-    var toTime = (
-      <div style={style.inline}>
-        <span style={style.timedivider}>-</span>
-        <span>{to}</span>
-      </div>
-    )
-
-    let shouldShowTo = function (from, to) {
-      if (from == to)
-        return false
-      return true
-    }
-
-    return (
-      <div style={style.timeframe}>
-        <span>{from}</span>
-        { shouldShowTo(from, to) ? toTime : null }
-      </div>
-    )
+function shouldShowTo(privateFrom, privateTo) {
+  if (privateFrom === privateTo) {
+    return false
   }
-}));
+  return true
+}
 
+const propTypes = {
+  from: PropTypes.string.isRequired,
+  to: PropTypes.string
+}
+
+const TimeFrame = (props) => {
+  const { to, from } = props
+
+  const toTime = (
+    <div style={style.inline}>
+      <span style={style.timedivider}>-</span>
+      <span>{to}</span>
+    </div>
+  )
+
+  return (
+    <div style={style.timeframe}>
+      <span>{from}</span>
+      { shouldShowTo(from, to) ? toTime : null }
+    </div>
+  )
+}
+
+TimeFrame.propTypes = propTypes
+
+export default Radium(TimeFrame)

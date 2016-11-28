@@ -10,6 +10,8 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "comma-dangle": ["error", "never"],
+    "react/jsx-closing-bracket-location": 0,
     "semi": ["error", "never"],
     "quotes": [2, "single"],
     "strict": [2, "never"],

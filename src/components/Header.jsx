@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 
 import Resource from './Resource'
 import colors from '../configuration'
+import Background from '../pattern.png'
 
 const style = {
   topbar: {
     margin: '0px',
     background: colors.topbar.background,
+    backgroundImage: `url(${Background})`,
     color: colors.topbar.font
   },
   header: {
@@ -40,20 +42,20 @@ const style = {
     display: 'block',
     textTransform: 'uppercase',
     fontSize: '12px',
+    fontFamily: 'Montserrat',
     letterSpacing: '1px',
-    fontFamily: 'Poiret One'
   },
   phone: {
     display: 'block',
+    fontFamily: 'Montserrat',
     fontSize: '12px',
     letterSpacing: '1px',
-    fontFamily: 'Poiret One'
   },
   address: {
     paddingRight: '5px',
     fontSize: '13px',
     letterSpacing: '1px',
-    fontFamily: 'Poiret One'
+    fontFamily: 'Montserrat',
   },
   resource_list: {
     paddingTop: '20px'
@@ -64,8 +66,8 @@ const Header = (props) => {
   const { details } = props
 
   return (
-    <div className="header" style={style.topbar}>
-      <div className="flexbox-container" style={style.container}>
+    <div style={style.topbar}>
+      <div style={style.container}>
         <div style={style.header}>
           <span style={style.name}>{details.name}</span>
           <span style={style.email}>{details.email}</span>

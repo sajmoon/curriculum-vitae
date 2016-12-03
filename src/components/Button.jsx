@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
+import colors from '../configuration'
 
 const style = {
   margin: '20px',
   border: '0',
   cursor: 'pointer',
-  background: 'rgb(168, 186, 240)',
-  color: '#2574A9',
+  background: colors.base.complementary,
+  color: 'white',
   fontSize: '18px',
   padding: '10px'
 }

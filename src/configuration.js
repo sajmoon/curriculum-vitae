@@ -9,20 +9,21 @@ const base = {
 }
 
 const colors = {
+  base: base,
   topbar: {
     background: base.primary,
-    font: tinycolor('white').darken(5).toHexString()
+    font: tinycolor('white').desaturate(10).darken(70).toHexString()
   },
   experience: {
     header: {
-      borderColor: tinycolor(base.tertiary).darken(10).toHexString(),
-      background: base.tertiary,
+      borderColor: tinycolor(base.complementary).darken(10).toHexString(),
+      background: base.complementary,
       font: tinycolor('white').darken(5).toHexString()
     },
     odd: tinycolor('white').darken(3).toHexString(),
     even: tinycolor('white').darken(2).toHexString(),
-    hover: tinycolor(base.secondary).lighten(10).toHexString(),
-    border: tinycolor(base.secondary).lighten(1).toHexString()
+    hover: tinycolor('white').lighten(10).toHexString(),
+    border: tinycolor(base.complementary).lighten(1).toHexString()
   }
 }
 

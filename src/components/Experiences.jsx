@@ -11,7 +11,9 @@ const style = {
     paddingBottom: '1rem',
     paddingTop: '1rem',
     backgroundColor: colors.experience.header.background,
-    color: colors.experience.header.font
+    color: colors.experience.header.font,
+    borderBottom: '1px solid',
+    borderBottomColor: colors.experience.header.borderColor
   },
   hidden: {
     display: 'none'

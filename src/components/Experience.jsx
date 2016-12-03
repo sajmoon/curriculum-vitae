@@ -16,6 +16,8 @@ class Experience extends React.Component {
         padding: '15px',
         fontFamily: 'Montserrat',
         wordWrap: 'break-word',
+        borderBottom: '1px solid',
+        borderBottomColor: colors.experience.border,
         ':hover': {
           backgroundColor: colors.experience.hover
         }

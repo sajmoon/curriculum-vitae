@@ -43,19 +43,19 @@ const style = {
     textTransform: 'uppercase',
     fontSize: '12px',
     fontFamily: 'Montserrat',
-    letterSpacing: '1px',
+    letterSpacing: '1px'
   },
   phone: {
     display: 'block',
     fontFamily: 'Montserrat',
     fontSize: '12px',
-    letterSpacing: '1px',
+    letterSpacing: '1px'
   },
   address: {
     paddingRight: '5px',
     fontSize: '13px',
     letterSpacing: '1px',
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat'
   },
   resource_list: {
     paddingTop: '20px'

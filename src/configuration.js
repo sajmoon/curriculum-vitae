@@ -1,7 +1,7 @@
 import tinycolor from 'tinycolor2'
 
 const base = {
-  primary: '#9D96B8',
+  primary: '#C17878',
   secondary: '#A9CBB7',
   tertiary: tinycolor('blue').desaturate(30).spin(-15).lighten(30)
     .toHexString(),
@@ -9,7 +9,7 @@ const base = {
 }
 
 const colors = {
-  base: base,
+  base,
   topbar: {
     background: base.primary,
     font: tinycolor('white').desaturate(10).darken(70).toHexString()
